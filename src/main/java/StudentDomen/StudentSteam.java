@@ -25,6 +25,12 @@ public class StudentSteam implements Iterable<StudentGroup> {
         this.steam = steam;
     }
 
+    /**
+     *
+     * @param str default String
+     * @return    StringBuilder which has a \t\t in the begining of everything line
+     */
+
     private StringBuilder setDoubleTab(String str) {
         String[] array = str.split("\n");
         StringBuilder strTab = new StringBuilder();

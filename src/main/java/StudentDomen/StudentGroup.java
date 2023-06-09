@@ -9,19 +9,37 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
     List<Student> group;
     private int idGroup;
 
+    /**
+     *
+     * @param  group list of students
+     * @return init new Student group
+     */
     public StudentGroup(List<Student> group) {
         this.group = group;
         idGroup = ++count;
     }
 
+    /**
+     *
+     * @return group
+     */
     public List<Student> getGroup() {
         return group;
     }
 
+    /**
+     *
+     * @param  group
+     * @return change group
+     */
     public void setGroup(List<Student> group) {
         this.group = group;
     }
 
+    /**
+     *
+     * @return idGroup
+     */
     public int getIdGroup() {
         return idGroup;
     }
@@ -30,7 +48,6 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
      *
      * @return StudentGroup like String which include idGroup, amount of Students in group, list of Students with info about them
      */
-
     @Override
     public String toString() {
         int count = 1;
@@ -76,19 +93,16 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
 
     /**
      *
-     * @param group the object to be compared.
-     * @return      realization of implemented method from Comparable in class StudentGroup to use sort method with this
+     * @param  group the object to be compared.
+     * @return realization of implemented method from Comparable in class StudentGroup to use sort method with this
      */
-
     @Override
     public int compareTo(StudentGroup group) {
         if(this.size() == group.size()) {
 
             if(this.idGroup == group.idGroup) {
                 return 0;
-            }
-            if(this.idGroup < group.idGroup)
-            {
+            } if(this.idGroup < group.idGroup) {
                 return -1;
             }
             return 1;
@@ -103,7 +117,6 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
      *
      * @return size of StudentGroup
      */
-
     public int size() {
         int sum = 0;
         for (Student student : this.group) {

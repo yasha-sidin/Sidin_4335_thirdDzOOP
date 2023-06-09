@@ -8,19 +8,37 @@ public class StudentSteam implements Iterable<StudentGroup> {
     private int idSteam;
     private List<StudentGroup> steam;
 
+    /**
+     *
+     * @param  steam list of student groups
+     * @return init StudentSteam with unique idSteam
+     */
     public StudentSteam(List<StudentGroup> steam) {
         this.steam = steam;
         idSteam = ++count;
     }
 
+    /**
+     *
+     * @return help to get idSteam
+     */
     public int getIdSteam() {
         return idSteam;
     }
 
+    /**
+     *
+     * @return help to get steam
+     */
     public List<StudentGroup> getSteam() {
         return steam;
     }
 
+    /**
+     *
+     * @param  steam list of student groups
+     * @return change steam
+     */
     public void setSteam(List<StudentGroup> steam) {
         this.steam = steam;
     }
@@ -28,9 +46,8 @@ public class StudentSteam implements Iterable<StudentGroup> {
     /**
      *
      * @param str default String
-     * @return    StringBuilder which has a \t\t in the begining of everything line
+     * @return    StringBuilder which has a \t\t in the beginning of everything line
      */
-
     private StringBuilder setDoubleTab(String str) {
         String[] array = str.split("\n");
         StringBuilder strTab = new StringBuilder();
@@ -68,7 +85,6 @@ public class StudentSteam implements Iterable<StudentGroup> {
      *
      * @return realization of implemented method from Iterator in class StudentSteam to use foreach with this and StudentGroup
      */
-
     @Override
     public Iterator<StudentGroup> iterator() {
 

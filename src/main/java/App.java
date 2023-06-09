@@ -3,6 +3,7 @@ import StudentContollers.EmploeeController;
 import StudentContollers.TeacherController;
 import StudentDomen.*;
 import StudentService.EmploeeService;
+import StudentService.TeacherService;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -66,5 +67,12 @@ public class App {
         teacherController.createDefault("Maxim", "Lionov", "Spb", 40);
 
         System.out.println("Avarage age of teachers: " + AverageAge.getAverageAge(teacherController));
+
+        TeacherService teacherService = new TeacherService();
+        teacherService.createTeacher("Maria", "Ivanovna", "Moscow", 50, new ArrayList<>(List.of("Math", "Biology")));
+        teacherService.createDefault("Maxim", "Lionov", "Spb", 40);
+        teacherService.createDefault("Alex", "Merov", "Moscow", 35);
+        teacherService.createDefault("Boris", "Johnson", "Spb", 47);
+        teacherService.printSortedByFIOTeacherList();
     }
 }
